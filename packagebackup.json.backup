@@ -5,10 +5,10 @@
 	"scripts": {
 		"clean": "git clean -xdf .cache .next build dist node_modules",
 		"build": "prisma generate && next build",
-		"deploy": "pnpm build && pnpm db:migrate",
+		"deploy": "npm run build && npm run db:migrate",
 		"dev": "prisma generate && next dev",
-		"e2e": "pnpm dlx playwright test --ui",
-		"e2e:ci": "pnpm dlx playwright install && pnpm dlx playwright test",
+		"e2e": "npx playwright test --ui",
+		"e2e:ci": "npx playwright install && npx playwright test",
 		"format": "biome format",
 		"format:write": "biome format --write",
 		"lint": "biome lint",
@@ -17,16 +17,16 @@
 		"check:write": "biome check --write --unsafe",
 		"start": "next start",
 		"typecheck": "tsc --noEmit",
-		"test": "pnpm test:unit",
-		"test:unit": "pnpm with-dev-env -- vitest",
-		"test:db": "RUN_DB_TESTS=true pnpm with-dev-env -- vitest",
-		"test:watch": "pnpm test:unit -- --watch",
-		"test:coverage": "pnpm with-dev-env -- vitest run --coverage",
-		"test:e2e": "pnpm with-dev-env -- playwright test",
-		"test:e2e:ui": "pnpm with-dev-env -- playwright test --ui",
-		"test:e2e:debug": "pnpm with-dev-env -- playwright test --debug",
-		"test:e2e:headed": "pnpm with-dev-env -- playwright test --headed",
-		"test:e2e:setup": "pnpm with-dev-env -- playwright install",
+		"test": "npm run test:unit",
+		"test:unit": "npm run with-dev-env -- vitest",
+		"test:db": "RUN_DB_TESTS=true npm run with-dev-env -- vitest",
+		"test:watch": "npm run test:unit -- --watch",
+		"test:coverage": "npm run with-dev-env -- vitest run --coverage",
+		"test:e2e": "npm run with-dev-env -- playwright test",
+		"test:e2e:ui": "npm run with-dev-env -- playwright test --ui",
+		"test:e2e:debug": "npm run with-dev-env -- playwright test --debug",
+		"test:e2e:headed": "npm run with-dev-env -- playwright test --headed",
+		"test:e2e:setup": "npm run with-dev-env -- playwright install",
 		"with-dev-env": "dotenv -e ./.env --",
 		"db:generate": "prisma generate",
 		"db:migrate": "prisma migrate deploy",
@@ -40,11 +40,11 @@
 		"docker:logs": "docker compose logs -f",
 		"stripe:listen": "stripe listen --forward-to localhost:3000/api/webhooks/stripe",
 		"stripe:trigger": "stripe trigger",
-		"email:dev": "pnpm dlx react-email dev --dir lib/email/templates --port 3001",
+		"email:dev": "npx react-email dev --dir lib/email/templates --port 3001",
 		"prepare": "husky",
 		"postinstall": "fumadocs-mdx && prisma generate",
-		"deps:check": "pnpm dlx npm-check-updates",
-		"deps:update": "pnpm dlx npm-check-updates -u"
+		"deps:check": "npx npm-check-updates",
+		"deps:update": "npx npm-check-updates -u"
 	},
 	"dependencies": {
 		"@ai-sdk/openai": "3.0.0",
@@ -180,7 +180,7 @@
 		"vitest": "4.0.16"
 	},
 	"engines": {
-		"node": ">=22"
+		"node": "22.21.1"
 	},
 	"overrides": {
 		"@types/react": "19.2.7",

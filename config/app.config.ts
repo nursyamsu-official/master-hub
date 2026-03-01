@@ -1,13 +1,13 @@
 import { getBaseUrl } from "@/lib/utils";
 
 export const appConfig = {
-	appName: "Seecat Apps",
-	description: `Seecat Apps's description`,
+	appName: "Master Hub Apps",
+	description: `The Backbone of your Supply Chain`,
 	baseUrl: getBaseUrl(),
 	// Contact information (displayed on contact page)
 	contact: {
 		enabled: true,
-		email: "info@contact.seecat.web.id",
+		email: "info@info.seecat.web.id",
 		phone: "+62 857-0000-0000",
 		address: "Jl. Raya Cibatu No. 123, Bandung, Indonesia",
 	},

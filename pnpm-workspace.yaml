@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@prisma/engines'
+  - '@sentry/cli'
+  - cpu-features
+  - esbuild
+  - prisma
+  - protobufjs
+  - sharp
+  - ssh2

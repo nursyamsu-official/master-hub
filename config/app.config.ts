@@ -1,15 +1,15 @@
 import { getBaseUrl } from "@/lib/utils";
 
 export const appConfig = {
-	appName: "Acme",
-	description: `Acme's description`,
+	appName: "Seecat Apps",
+	description: `Seecat Apps's description`,
 	baseUrl: getBaseUrl(),
 	// Contact information (displayed on contact page)
 	contact: {
 		enabled: true,
-		email: "hello@yourdomain.com",
-		phone: "(123) 456-7890",
-		address: "123 Main St, San Francisco, CA",
+		email: "info@contact.seecat.web.id",
+		phone: "+62 857-0000-0000",
+		address: "Jl. Raya Cibatu No. 123, Bandung, Indonesia",
 	},
 	// Site sections - enable/disable major parts of the site
 	site: {

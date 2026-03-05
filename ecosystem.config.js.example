@@ -1,0 +1,20 @@
+module.exports = {
+    apps: [
+        {
+            name: 'Apps MasterHub', // Application name
+            script: 'pnpm', //use pnpm or npm
+            args: 'run start', // script in package.json
+            cwd: '/var/www/masterhub/apps',  // application folder location
+            interpreter: 'none', // none or bash ?
+            instances: 1, //use 1 or max, but for next.js use 1
+            exec_mode: 'fork', // fork or cluster. fork safest
+            autorestart: true, // try restart if any crash
+            watch: false, //no in production, watch only in dev
+            max_memory_restart: '1G', //restart if exceed 1 GB
+            env: {
+                NODE_ENV: 'production',
+                PORT: 3000  // port application, ensure same with virtual host and firewall allowed
+            }
+        }
+    ]
+};
